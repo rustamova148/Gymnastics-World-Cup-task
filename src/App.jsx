@@ -12,18 +12,16 @@ import livedata from "./livedata";
 
 function App() {
   const [value, setValue] = useState("1");
-  const [mobModal, setMobModal] = useState(false);
-  const [mobModalL, setMobModalL] = useState(false);
+  const [openId, setOpenId] = useState(null);
+  const [openIdL, setOpenIdL] = useState(null);
 
-  const handleMobVersCont = () => {
-    setMobModal((prevState) => !prevState);
+  const handleShowMob = (id) => {
+    setOpenId(prevId => (prevId === id ? null : id));
   };
-
-  const handleMobVersContL = () => {
-    setMobModalL((prevState) => !prevState);
+  const handleShowMobL = (id) => {
+    setOpenIdL(prevId => (prevId === id ? null : id));
   };
-
-  console.log(mobModal);
+  
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -238,16 +236,16 @@ function App() {
                           border: "none",
                           color: "white",
                         }}
-                        onClick={handleMobVersContL}
+                        onClick={() => handleShowMobL(ld.id)}
                       >
-                        {mobModalL ? (
+                        {openIdL === ld.id ? (
                           <i className="fa-solid fa-angle-down"></i>
                         ) : (
                           <i className="fa-solid fa-angle-up"></i>
                         )}
                       </button>
                     </li>
-                    {mobModalL ? (
+                    {openIdL === ld.id && (
                       <div style={{ minHeight: "100px", backgroundColor: "#1A1635",
                         border: "1px solid #1A1635", marginBottom: "20px", marginTop: "-26px",
                         borderBottomRightRadius: "10px", borderBottomLeftRadius: "10px", paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px"
@@ -272,8 +270,6 @@ function App() {
                           </div>
                         </div>
                        </div>
-                    ) : (
-                      ""
                     )}
                   </div>
                 ))}
@@ -443,16 +439,16 @@ function App() {
                           border: "none",
                           color: "white",
                         }}
-                        onClick={handleMobVersCont}
+                        onClick={() => handleShowMob(fd.id)}
                       >
-                        {mobModal ? (
+                        {openId === fd.id ? (
                           <i className="fa-solid fa-angle-down"></i>
                         ) : (
                           <i className="fa-solid fa-angle-up"></i>
                         )}
                       </button>
                     </li>
-                    {mobModal ? (
+                    {openId === fd.id && (
                       <div style={{ minHeight: "100px", backgroundColor: "#1A1635",
                         border: "1px solid #1A1635", marginBottom: "20px", marginTop: "-26px",
                         borderBottomRightRadius: "10px", borderBottomLeftRadius: "10px", paddingTop: "15px", paddingLeft: "10px", paddingRight: "10px"
@@ -477,8 +473,6 @@ function App() {
                           </div>
                         </div>
                        </div>
-                    ) : (
-                      ""
                     )}
                   </div>
                 ))}
