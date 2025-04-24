@@ -1,0 +1,193 @@
+.app{
+    padding: 30px 20px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #080915;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.result-mobile{
+    display: none;
+    width: 100%;
+    min-height: 500px;
+    margin-top: 60px;
+    list-style-type: none;
+}
+.result-mobile li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 17px;
+    background-color: #1A1635;
+    padding: 12px 14px;
+    border-radius: 10px;
+}
+.head-text-cont{
+    display: flex;
+    gap: 15px;
+}
+.head-text{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.head-text p:first-child{
+    font-size: 19px;
+}
+.head-text p:nth-child(2){
+    font-size: 14px;
+}
+.filter-container{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.filter-container .fc-in{
+    display: flex;
+    border: 1px solid #1A1635;
+    border-radius: 10px;
+}
+.filter-container .fc-in button{
+    padding: 10px 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.tabitem{
+    width: 800px;
+}
+.tools{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 100px;
+}
+.livered{
+    position: absolute;
+    left: 53px;
+    top: 19px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: red;
+}
+.css-1duvj0c-MuiButtonBase-root-MuiTab-root.Mui-selected,
+.css-1ks51u7-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: white !important;
+}
+.result-datas-container{
+    width: 800px;
+    min-height: 500px;
+    margin-top: 60px;
+}
+.rank{
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    background-color: #0A8BEC;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rank2{
+    width: 30px;
+    height: 30px;
+    margin-bottom: -5px;
+    background-color: #0A8BEC;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+th{
+    padding: 15px 0;
+    text-align: start;
+}
+td{
+    padding: 5px 0;
+}
+.flag-country{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+table{
+    margin-top: 30px
+}
+.active{
+    background-color: #1A1635 !important;
+}
+tbody tr{
+    height: 30px;
+}
+
+@media (max-width: 900px) {
+    .tabitem,
+    .filter-container{
+      width: 100%;
+    }
+  
+    .result-datas-container{
+        display: none;
+    }
+    .result-mobile{
+        display: block;
+    }
+    .tools {
+      display: none;
+    }
+
+    .filter-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  
+    .filter-container .fc-in {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .livered{
+        left: 18px;
+    }
+
+  }
+  
+  @media (max-width: 600px) {
+    .head-text-cont {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  
+    .head-text p:first-child {
+      font-size: 16px;
+    }
+  
+    .head-text p:nth-child(2) {
+      font-size: 12px;
+    }
+  
+    table {
+      font-size: 12px;
+      overflow-x: auto;
+      display: block;
+    }
+  
+    .flag-country img {
+      width: 20px;
+      height: 14px;
+    }
+  
+    .livered {
+      left: 20px;
+    }
+  }
+  
